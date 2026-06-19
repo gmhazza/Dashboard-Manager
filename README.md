@@ -5,6 +5,8 @@ This Project is a simple Dashboard manager which uses a Vue3 framework. I havent
 
 ## Project Setup
 
+You need a latest version of nodejs
+
 ```sh
 git clone https://github.com/gmhazza/Dashboard-Manager.git
 cd Dashboard-Manager
