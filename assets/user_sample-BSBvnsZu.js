@@ -1,0 +1,1 @@
+var e={name:null,username:null,password:null,age:null,gender:null,dob:null,link:null,email:null,nationality:null};export{e as t};

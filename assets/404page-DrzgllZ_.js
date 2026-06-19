@@ -1,0 +1,1 @@
+import{d as e,o as t,s as n,t as r}from"./index-CjMORVMv.js";var i={},a={class:`container`};function o(r,i){return e(),n(`div`,a,[...i[0]||=[t(`div`,{class:`error danger centered`},[t(`h1`,null,`404`),t(`h3`,null,`Page Not founded`)],-1)]])}var s=r(i,[[`render`,o],[`__scopeId`,`data-v-6aa4900d`]]);export{s as default};
