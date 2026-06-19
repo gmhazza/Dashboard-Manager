@@ -41,5 +41,5 @@ __screenshots__/
 
 # json data
 
-/src/data/database.json
-/src/data/last_login_details.json
+src/data/database.json
+src/data/last_login_details.json
