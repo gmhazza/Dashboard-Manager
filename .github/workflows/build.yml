@@ -1,38 +1,35 @@
-name: Build Vue Application
+name: Build and Deploy Vue Application
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+
+# CRITICAL: Tells GitHub this workflow is allowed to write changes to your repo
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. Download a copy of your repository code
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    # 2. Set up the specific Node.js environment your project needs
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20' # Change to match your local Node.js version
-        cache: 'npm'       # Automatically caches dependencies for faster builds
+        node-version: '20'
+        cache: 'npm'
 
-    # 3. Install dependencies cleanly (similar to npm install)
     - name: Install dependencies
       run: npm ci
 
-    # 4. Compiles and minifies your Vue app for production
     - name: Build project
       run: npm run build
 
-    # 5. Push the build folder to the gh-pages branch
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        folder: dist/  # The folder the action should deploy
-        branch: gh-pages # The branch the action should deploy to
+        folder: dist/      # Verify this matches your build folder name
+        branch: gh-pages   # The automated target deployment branch
