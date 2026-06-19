@@ -1,0 +1,35 @@
+name: Build and Deploy Vue Application
+
+on:
+  push:
+    branches: [ main ]
+
+# CRITICAL: Tells GitHub this workflow is allowed to write changes to your repo
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build project
+      run: npm run build
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: dist/      # Verify this matches your build folder name
+        branch: gh-pages   # The automated target deployment branch
