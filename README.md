@@ -22,5 +22,5 @@ npm run dev
 or for production build
 
 ```sh
-npm run dev
+npm run build
 ```
