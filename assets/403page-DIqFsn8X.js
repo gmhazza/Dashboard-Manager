@@ -1,0 +1,1 @@
+import{f as e,o as t,s as n,t as r}from"./index-BUc9UwWy.js";var i={},a={class:`container`};function o(r,i){return e(),n(`div`,a,[...i[0]||=[t(`div`,{class:`error danger centered`},[t(`h1`,null,`403`),t(`h3`,null,`You don't have right to access this Page`)],-1)]])}var s=r(i,[[`render`,o],[`__scopeId`,`data-v-54846094`]]);export{s as t};

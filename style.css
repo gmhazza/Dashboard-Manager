@@ -98,3 +98,9 @@
 .btn-edit:hover {
   color: #ffffff;
 }
+.display-data {
+  padding: 24px;
+  margin: 10px;
+  border-radius: 6px;
+  background-color: lightgray;
+}
