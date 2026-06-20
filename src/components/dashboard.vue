@@ -42,7 +42,12 @@ async function deleteAllData() {
     }
   }
 }
-async function deleteSpecificData() {}
+function deleteSpecificData() {
+  router.push('/remove-specific-data')
+}
+function showAllData() {
+  router.push('/show-all-data')
+}
 </script>
 
 <template>
@@ -55,61 +60,16 @@ async function deleteSpecificData() {}
           <hr />
           <button class="btn-edit" @click="goToEditProfile">>Edit</button>
         </div>
-        <table>
-          <tr>
-            <td><b>Full Name:</b></td>
-            <td>{{ data.account.name }}</td>
-          </tr>
-          <tr>
-            <td><b>Age:</b></td>
-            <td>{{ data.account.age }}</td>
-          </tr>
-          <tr>
-            <td><b>Gender:</b></td>
-            <td>
-              <div v-if="data.account.gender">{{ data.account.gender }}</div>
-              <div v-else>{{ undef }}</div>
-            </td>
-          </tr>
-          <tr>
-            <td><b>Date of Birth:</b></td>
-            <td>
-              <div v-if="data.account.dob">
-                {{ data.account.dob }}
-              </div>
-              <div v-else>
-                {{ undef }}
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td><b>Email:</b></td>
-            <td>
-              <div v-if="data.account.email">
-                {{ data.account.email }}
-              </div>
-              <div v-else>
-                {{ undef }}
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td><b>Nationality:</b></td>
-            <td>
-              <div v-if="data.account.nationality">
-                {{ data.account.nationality }}
-              </div>
-              <div v-else>
-                {{ undef }}
-              </div>
-            </td>
-          </tr>
-        </table>
+        <div v-for="(value, key) in lastLogin.account" :key="key">
+          <strong>{{ key }}: </strong>{{ value }}
+        </div>
       </div>
     </div>
     <div v-else>
       <h1>Hello, Admin!</h1>
       <hr />
+      <button class="btn-edit" @click="showAllData">Show all Data</button>
+      <br />
       <button class="btn-edit" @click="deleteAllData">Delete all Data</button>
       <br />
       <button class="btn-edit" @click="deleteSpecificData">Delete any Specific Data</button>

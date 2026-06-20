@@ -43,6 +43,16 @@ const router = createRouter({
       component: () => import('/src/components/logout.vue'),
     },
     {
+      path: '/remove-specific-data',
+      name: 'Remove-Specific-data',
+      component: () => import('/src/components/removespecificdata.vue'),
+    },
+        {
+      path: '/show-all-data',
+      name: 'Show-All-data',
+      component: () => import('/src/components/showalldata.vue'),
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: '404Page',
       component: () => import('/src/components/404page.vue'),
